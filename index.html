@@ -1,0 +1,1048 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CAP Vesoul — L'association des acteurs locaux de Vesoul</title>
+  <meta name="description" content="CAP Vesoul regroupe plus de 80 membres : commerçants, entrepreneurs, jeunes et habitants. Stages, apéros business, actions solidaires. Agir localement, ensemble." />
+  <meta property="og:title" content="CAP Vesoul — Agir localement, ensemble." />
+  <meta property="og:description" content="L'association qui crée du lien entre les jeunes, les habitants et les professionnels de Vesoul. +80 membres." />
+  <meta property="og:type" content="website" />
+  <style>
+:root {
+  --cream: #F5F1EB;
+  --cream2: #EDE8DF;
+  --sand: #D9CFC0;
+  --dark: #1C1C1C;
+  --slate: #3A3A4A;
+  --muted: #6B6B7A;
+  --rust: #C4521A;
+  --rust2: #E8714A;
+  --rust-pale: #FAE8DF;
+  --green: #2E5945;
+  --green2: #4A8C6E;
+  --green-pale: #DFF0E8;
+  --gold: #A67C00;
+  --gold-pale: #FFF3CC;
+  --white: #FFFFFF;
+  --r: 14px;
+  --r2: 24px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family: Georgia, 'Times New Roman', serif;
+  background:var(--cream);
+  color:var(--dark);
+  line-height:1.65;
+  overflow-x:hidden;
+}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer}
+
+/* TYPO */
+h1,h2,h3,h4{font-family:Georgia,serif;line-height:1.15;letter-spacing:-.02em}
+h1{font-size:clamp(2.2rem,5.5vw,4rem);font-weight:700}
+h2{font-size:clamp(1.7rem,3.5vw,2.7rem);font-weight:700}
+h3{font-size:clamp(1.1rem,2vw,1.5rem);font-weight:700}
+p{font-family:system-ui,-apple-system,sans-serif;font-size:1rem;color:var(--muted);line-height:1.7}
+.lead{font-size:1.15rem;color:var(--slate);line-height:1.75}
+.overline{font-family:system-ui,sans-serif;font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--rust)}
+
+/* LAYOUT */
+.container{max-width:1100px;margin:0 auto;padding:0 1.25rem}
+.section{padding:5rem 0}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .65s ease,transform .65s ease}
+.reveal.visible{opacity:1;transform:none}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}.d4{transition-delay:.4s}.d5{transition-delay:.5s}
+
+/* BUTTONS */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:.5rem;
+  min-height:52px;padding:.75rem 1.75rem;border-radius:999px;
+  font-family:system-ui,sans-serif;font-size:.95rem;font-weight:600;
+  border:2px solid transparent;transition:all .25s ease;text-decoration:none;white-space:nowrap;
+}
+.btn:focus-visible{outline:3px solid var(--rust);outline-offset:3px}
+.btn-primary{background:var(--rust);color:#fff;border-color:var(--rust)}
+.btn-primary:hover{background:var(--rust2);border-color:var(--rust2);transform:translateY(-2px);box-shadow:0 8px 24px rgba(196,82,26,.3)}
+.btn-ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.5)}
+.btn-ghost:hover{background:rgba(255,255,255,.12);border-color:#fff;transform:translateY(-2px)}
+.btn-dark{background:var(--dark);color:#fff}
+.btn-dark:hover{background:var(--slate);transform:translateY(-2px)}
+.btn-green{background:var(--green);color:#fff}
+.btn-green:hover{background:var(--green2);transform:translateY(-2px)}
+.btn-outline{background:transparent;color:var(--rust);border-color:var(--rust)}
+.btn-outline:hover{background:var(--rust);color:#fff;transform:translateY(-2px)}
+.btn-lg{min-height:58px;padding:1rem 2.25rem;font-size:1.05rem}
+
+/* ======================== NAV ======================== */
+#nav{
+  position:fixed;top:0;left:0;right:0;z-index:200;
+  transition:all .3s ease;
+}
+#nav.scrolled{
+  background:rgba(245,241,235,.96);
+  backdrop-filter:blur(16px);
+  border-bottom:1px solid rgba(28,28,28,.07);
+  box-shadow:0 2px 16px rgba(28,28,28,.06);
+}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:68px}
+.nav-logo{font-family:Georgia,serif;font-size:1.35rem;font-weight:700;letter-spacing:-.03em;color:var(--dark)}
+.nav-logo span{color:var(--rust)}
+#nav:not(.scrolled) .nav-logo{color:#fff}
+#nav:not(.scrolled) .nav-logo span{color:var(--rust2)}
+.nav-links{display:flex;gap:1.75rem;list-style:none}
+.nav-links a{font-family:system-ui,sans-serif;font-size:.88rem;font-weight:500;color:var(--muted);transition:color .2s}
+#nav:not(.scrolled) .nav-links a{color:rgba(255,255,255,.72)}
+.nav-links a:hover{color:var(--rust)}
+#nav:not(.scrolled) .nav-links a:hover{color:#fff}
+.nav-tel{font-family:system-ui,sans-serif}
+.hamburger{display:none;flex-direction:column;gap:5px;padding:6px;background:none;border:none;cursor:pointer}
+.hamburger span{width:24px;height:2px;background:var(--dark);border-radius:2px;transition:all .25s;display:block}
+#nav:not(.scrolled) .hamburger span{background:#fff}
+.mobile-menu{
+  display:none;position:fixed;top:68px;left:0;right:0;bottom:0;
+  background:var(--cream);z-index:199;
+  padding:2rem 1.25rem;flex-direction:column;gap:.5rem;overflow-y:auto;
+}
+.mobile-menu.open{display:flex}
+.mobile-menu a{font-family:system-ui,sans-serif;font-size:1.1rem;font-weight:500;color:var(--dark);padding:.8rem 0;border-bottom:1px solid var(--sand)}
+.mobile-menu .btn{width:100%;margin-top:.75rem;justify-content:center}
+
+/* ======================== HERO ======================== */
+#hero{
+  min-height:100vh;
+  background:linear-gradient(150deg,#111118 0%,#1c2e24 60%,#1a1a2e 100%);
+  display:flex;align-items:center;overflow:hidden;position:relative;
+}
+.hero-glow1{position:absolute;top:-100px;right:-150px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(196,82,26,.2) 0%,transparent 70%);pointer-events:none}
+.hero-glow2{position:absolute;bottom:-150px;left:-100px;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(46,89,69,.18) 0%,transparent 65%);pointer-events:none}
+.hero-content{position:relative;z-index:1;padding:7rem 0 5rem;max-width:800px}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:.5rem;
+  background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);
+  color:rgba(255,255,255,.7);padding:.4rem 1rem;border-radius:999px;
+  font-family:system-ui,sans-serif;font-size:.8rem;font-weight:500;margin-bottom:1.75rem;
+}
+.hero-dot{width:7px;height:7px;background:var(--rust2);border-radius:50%;animation:blink 2s infinite}
+@keyframes blink{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.7)}}
+.hero-title{color:#fff;margin-bottom:1.4rem}
+.hero-title em{font-style:italic;color:var(--rust2);font-weight:400}
+.hero-sub{
+  font-family:system-ui,sans-serif;
+  font-size:clamp(1rem,2vw,1.18rem);color:rgba(255,255,255,.62);
+  max-width:580px;margin-bottom:2.5rem;line-height:1.75;
+}
+.hero-sub strong{color:rgba(255,255,255,.82)}
+.hero-actions{display:flex;flex-wrap:wrap;gap:1rem;margin-bottom:3.5rem}
+.hero-stats{display:flex;gap:2.5rem;flex-wrap:wrap;padding-top:2rem;border-top:1px solid rgba(255,255,255,.1)}
+.hstat{display:flex;flex-direction:column;gap:.2rem}
+.hstat-n{font-family:Georgia,serif;font-size:2.1rem;font-weight:700;color:#fff;line-height:1}
+.hstat-n span{color:var(--rust2)}
+.hstat-l{font-family:system-ui,sans-serif;font-size:.8rem;color:rgba(255,255,255,.48);line-height:1.3}
+
+/* ======================== ABOUT ======================== */
+#about{background:var(--white)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+.about-text .overline{display:block;margin-bottom:.75rem}
+.about-text h2{margin-bottom:1.5rem}
+.about-text p{margin-bottom:1rem}
+.about-text p:last-of-type{margin-bottom:0}
+.about-text strong{color:var(--dark);font-weight:600}
+.tags{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.5rem}
+.tag{
+  font-family:system-ui,sans-serif;font-size:.8rem;font-weight:600;
+  padding:.35rem .9rem;border-radius:999px;display:inline-block;
+}
+.tag-rust{background:var(--rust-pale);color:var(--rust)}
+.tag-green{background:var(--green-pale);color:var(--green)}
+.tag-gold{background:var(--gold-pale);color:var(--gold)}
+.tag-gray{background:var(--cream2);color:var(--slate)}
+.about-card{
+  background:var(--dark);border-radius:var(--r2);padding:2.5rem;position:relative;overflow:hidden;
+}
+.about-card::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse 80% 60% at 85% -10%,rgba(196,82,26,.25) 0%,transparent 60%);
+}
+.about-card-inner{position:relative;z-index:1}
+.about-quote{font-family:Georgia,serif;font-size:clamp(1.3rem,2.5vw,1.8rem);font-weight:700;color:#fff;line-height:1.3;margin-bottom:1.5rem}
+.about-quote em{color:var(--rust2);font-style:italic;font-weight:400}
+.about-card p{color:rgba(255,255,255,.52);font-size:.9rem;line-height:1.7}
+.card-tags{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.5rem}
+.ctag{
+  font-family:system-ui,sans-serif;
+  background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);
+  color:rgba(255,255,255,.65);padding:.3rem .8rem;border-radius:999px;font-size:.78rem;font-weight:500;
+}
+
+/* ======================== MISSIONS ======================== */
+#missions{background:var(--cream2)}
+.missions-hd{text-align:center;max-width:600px;margin:0 auto 3.5rem}
+.missions-hd .overline{display:block;margin-bottom:.75rem}
+.missions-hd h2{margin-bottom:1rem}
+.mcards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
+.mcard{
+  background:#fff;border-radius:var(--r2);padding:2rem;
+  box-shadow:0 2px 12px rgba(28,28,28,.06);
+  transition:transform .25s ease,box-shadow .25s ease;
+  position:relative;overflow:hidden;
+}
+.mcard::after{content:'';position:absolute;bottom:0;left:0;right:0;height:4px}
+.mcard:hover{transform:translateY(-5px);box-shadow:0 16px 48px rgba(28,28,28,.12)}
+.mcard.youth::after{background:var(--rust)}
+.mcard.pro::after{background:var(--green)}
+.mcard.social::after{background:var(--gold)}
+.micon{width:54px;height:54px;border-radius:var(--r);display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin-bottom:1.25rem}
+.mcard.youth .micon{background:var(--rust-pale)}
+.mcard.pro .micon{background:var(--green-pale)}
+.mcard.social .micon{background:var(--gold-pale)}
+.mcard .overline{display:block;margin-bottom:.4rem}
+.mcard.pro .overline{color:var(--green)}
+.mcard.social .overline{color:var(--gold)}
+.mcard h3{margin-bottom:.5rem;color:var(--dark);font-size:1.1rem}
+.mcard p{font-size:.9rem;margin-bottom:1.25rem}
+.mlist{list-style:none;display:flex;flex-direction:column;gap:.45rem}
+.mlist li{font-family:system-ui,sans-serif;font-size:.85rem;color:var(--muted);display:flex;align-items:flex-start;gap:.5rem}
+.mlist li::before{content:'→';font-weight:700;flex-shrink:0;margin-top:1px}
+.mcard.youth .mlist li::before{color:var(--rust)}
+.mcard.pro .mlist li::before{color:var(--green)}
+.mcard.social .mlist li::before{color:var(--gold)}
+.mpill{
+  display:inline-flex;align-items:center;gap:.4rem;
+  padding:.3rem .85rem;border-radius:999px;
+  font-family:system-ui,sans-serif;font-size:.78rem;font-weight:600;margin-top:1.5rem;
+}
+.mcard.youth .mpill{background:var(--rust-pale);color:var(--rust)}
+.mcard.pro .mpill{background:var(--green-pale);color:var(--green)}
+.mcard.social .mpill{background:var(--gold-pale);color:var(--gold)}
+
+/* ======================== ACTIONS ======================== */
+#actions{background:var(--dark)}
+.actions-hd{text-align:center;max-width:580px;margin:0 auto 3.5rem}
+.actions-hd .overline{color:rgba(255,255,255,.4);display:block;margin-bottom:.75rem}
+.actions-hd h2{color:#fff;margin-bottom:1rem}
+.actions-hd p{color:rgba(255,255,255,.5)}
+.acards{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+.acard{border-radius:var(--r2);padding:2.5rem;position:relative;overflow:hidden}
+.acard.spa{background:linear-gradient(135deg,var(--green) 0%,#1a3d2b 100%)}
+.acard.noel{background:linear-gradient(135deg,#8B1A1A 0%,#B52A2A 100%)}
+.acard::before{content:'';position:absolute;top:-60px;right:-60px;width:200px;height:200px;border-radius:50%;background:rgba(255,255,255,.04)}
+.acard-inner{position:relative;z-index:1}
+.acard .overline{color:rgba(255,255,255,.45);display:block;margin-bottom:.75rem}
+.acard h3{color:#fff;font-size:clamp(1.2rem,2vw,1.6rem);margin-bottom:1rem}
+.acard p{color:rgba(255,255,255,.65);font-size:.95rem;line-height:1.75}
+.anum{font-family:Georgia,serif;font-size:clamp(3.5rem,7vw,5.5rem);font-weight:700;line-height:1;margin-bottom:.2rem}
+.acard.spa .anum{color:var(--green2)}
+.acard.noel .anum{color:#FF9999}
+.anum-lbl{font-family:system-ui,sans-serif;font-size:.75rem;color:rgba(255,255,255,.38);text-transform:uppercase;letter-spacing:.08em;margin-bottom:1.5rem}
+
+/* ======================== JOIN ======================== */
+#join{background:var(--cream)}
+.join-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start}
+.join-text .overline{display:block;margin-bottom:.75rem}
+.join-text h2{margin-bottom:1.25rem}
+.join-text>.lead{margin-bottom:2rem}
+.profiles{display:flex;flex-direction:column;gap:.75rem;margin-bottom:2.5rem}
+.profile{
+  display:flex;align-items:flex-start;gap:1rem;padding:1rem 1.25rem;
+  background:var(--cream2);border-radius:var(--r);border:1.5px solid var(--sand);
+  transition:all .2s;
+}
+.profile:hover{border-color:var(--rust);background:var(--rust-pale)}
+.profile-icon{font-size:1.3rem;flex-shrink:0;margin-top:2px}
+.profile-title{font-family:system-ui,sans-serif;font-weight:600;font-size:.93rem;color:var(--dark);margin-bottom:.15rem}
+.profile-desc{font-size:.83rem;color:var(--muted)}
+.bcard{background:var(--dark);border-radius:var(--r2);padding:2.5rem;position:sticky;top:85px}
+.bcard h3{color:#fff;margin-bottom:1.75rem;font-size:1.2rem}
+.bitem{display:flex;gap:1rem;padding:1.25rem 0;border-bottom:1px solid rgba(255,255,255,.07)}
+.bitem:last-of-type{border-bottom:none;padding-bottom:0}
+.bnum{font-family:Georgia,serif;font-size:1.5rem;font-weight:700;color:var(--rust2);line-height:1;flex-shrink:0;width:2.2rem}
+.bitem h4{font-family:system-ui,sans-serif;color:#fff;font-size:.9rem;margin-bottom:.3rem}
+.bitem p{font-size:.83rem;color:rgba(255,255,255,.48)}
+.bctas{margin-top:2rem;display:flex;flex-direction:column;gap:.75rem}
+.bctas .btn{width:100%}
+
+/* ======================== CONTACT ======================== */
+#contact{background:var(--cream2)}
+.contact-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:4rem;align-items:start}
+.contact-info .overline{display:block;margin-bottom:.75rem}
+.contact-info h2{margin-bottom:1rem}
+.contact-info>.lead{margin-bottom:2rem}
+.cmethods{display:flex;flex-direction:column;gap:.9rem;margin-bottom:2rem}
+.cmethod{
+  display:flex;align-items:center;gap:1rem;padding:1rem 1.25rem;
+  background:#fff;border-radius:var(--r);border:1.5px solid var(--sand);
+  text-decoration:none;transition:all .2s;
+}
+.cmethod:hover{border-color:var(--rust);box-shadow:0 6px 20px rgba(28,28,28,.09);transform:translateX(4px)}
+.cmethod-icon{width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0}
+.cmethod.phone .cmethod-icon{background:var(--rust-pale)}
+.cmethod.email .cmethod-icon{background:var(--green-pale)}
+.cmethod-lbl{font-family:system-ui,sans-serif;font-size:.72rem;font-weight:600;text-transform:uppercase;letter-spacing:.07em;color:var(--muted)}
+.cmethod-val{font-family:system-ui,sans-serif;font-size:.98rem;font-weight:600;color:var(--dark)}
+.cmethod-arr{margin-left:auto;color:var(--muted);font-size:.85rem}
+.cform{background:#fff;border-radius:var(--r2);padding:2.5rem;box-shadow:0 6px 24px rgba(28,28,28,.08)}
+.cform h3{color:var(--dark);margin-bottom:.4rem;font-size:1.2rem}
+.cform-sub{font-family:system-ui,sans-serif;font-size:.85rem;color:var(--muted);margin-bottom:1.75rem}
+.fg{margin-bottom:1.15rem}
+.fg label{display:block;font-family:system-ui,sans-serif;font-size:.83rem;font-weight:600;color:var(--slate);margin-bottom:.35rem}
+.fg input,.fg textarea{
+  width:100%;padding:.8rem 1rem;
+  background:var(--cream);border:1.5px solid var(--sand);border-radius:10px;
+  font-family:system-ui,sans-serif;font-size:.95rem;color:var(--dark);
+  transition:border-color .2s,box-shadow .2s;resize:vertical;
+}
+.fg input:focus,.fg textarea:focus{outline:none;border-color:var(--rust);box-shadow:0 0 0 3px rgba(196,82,26,.12)}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.cform .btn{width:100%;margin-top:.4rem}
+.fnote{font-family:system-ui,sans-serif;font-size:.75rem;color:var(--muted);text-align:center;margin-top:.65rem}
+
+/* ======================== QUIZ ======================== */
+#quiz{background:var(--cream)}
+.quiz-wrap{max-width:740px;margin:0 auto}
+.quiz-hd{text-align:center;margin-bottom:3.5rem}
+.quiz-hd .overline{display:block;margin-bottom:.75rem}
+.quiz-hd h2{margin-bottom:.75rem}
+.quiz-hd p{max-width:480px;margin:0 auto}
+.qpbar{height:4px;background:var(--sand);border-radius:4px;margin-bottom:2.5rem;overflow:hidden}
+.qpfill{height:100%;background:var(--rust);border-radius:4px;transition:width .4s ease}
+.qcard{background:#fff;border-radius:var(--r2);padding:2.5rem;box-shadow:0 6px 24px rgba(28,28,28,.08)}
+.qstep{font-family:system-ui,sans-serif;font-size:.78rem;color:var(--muted);font-weight:500;margin-bottom:1rem;display:block}
+.qquestion{font-family:Georgia,serif;font-size:clamp(1.15rem,2.5vw,1.5rem);font-weight:700;color:var(--dark);margin-bottom:2rem;line-height:1.3}
+.qopts{display:flex;flex-direction:column;gap:.7rem;margin-bottom:2rem}
+.qopt{
+  display:flex;align-items:center;gap:1rem;padding:.95rem 1.25rem;
+  background:var(--cream);border:2px solid var(--sand);border-radius:var(--r);
+  cursor:pointer;transition:all .2s;
+  font-family:system-ui,sans-serif;font-size:.95rem;font-weight:500;color:var(--dark);
+  text-align:left;width:100%;
+}
+.qopt:hover{border-color:var(--rust);background:var(--rust-pale)}
+.qopt.sel{border-color:var(--rust);background:var(--rust-pale);color:var(--rust)}
+.qletter{
+  width:30px;height:30px;border-radius:50%;background:var(--sand);
+  display:flex;align-items:center;justify-content:center;
+  font-size:.78rem;font-weight:700;flex-shrink:0;transition:all .2s;
+}
+.qopt.sel .qletter{background:var(--rust);color:#fff}
+.qnav{display:flex;justify-content:space-between;align-items:center;gap:1rem}
+.qprev{
+  background:none;border:2px solid var(--sand);color:var(--muted);
+  min-height:48px;padding:.6rem 1.25rem;border-radius:999px;
+  font-family:system-ui,sans-serif;font-size:.88rem;font-weight:500;transition:all .2s;
+}
+.qprev:hover{border-color:var(--slate);color:var(--dark)}
+
+/* Result */
+.qresult{display:none;text-align:center}
+.qresult.show{display:block}
+.res-icon{font-size:4rem;margin-bottom:1rem;display:block}
+.res-sub{font-family:system-ui,sans-serif;font-size:.82rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--rust);margin-bottom:.5rem}
+.res-name{font-family:Georgia,serif;font-size:clamp(1.6rem,3vw,2.2rem);font-weight:700;color:var(--dark);margin-bottom:1.25rem}
+.res-desc{font-size:1rem;color:var(--muted);max-width:520px;margin:0 auto 1.25rem;line-height:1.75}
+.res-action{
+  background:var(--rust-pale);border-radius:var(--r);padding:1.25rem 1.5rem;
+  margin:1.5rem auto;max-width:520px;text-align:left;
+}
+.res-action-lbl{font-family:system-ui,sans-serif;font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--rust);margin-bottom:.4rem}
+.res-action p{font-size:.92rem;color:var(--slate)}
+.res-ctas{display:flex;flex-wrap:wrap;justify-content:center;gap:.85rem;margin-top:2rem}
+.res-note{font-family:system-ui,sans-serif;font-size:.78rem;color:var(--muted);margin-top:.75rem}
+
+/* ======================== FOOTER ======================== */
+footer{background:var(--dark);color:rgba(255,255,255,.5);padding:3rem 0 2rem}
+.foot-inner{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:3rem;margin-bottom:2.5rem}
+.foot-logo{font-family:Georgia,serif;font-size:1.3rem;font-weight:700;color:#fff;display:block;margin-bottom:1rem;letter-spacing:-.02em}
+.foot-logo span{color:var(--rust2)}
+.foot-brand p{font-size:.88rem;line-height:1.7;color:rgba(255,255,255,.42);margin-bottom:1.25rem}
+.foot-contact a{display:flex;align-items:center;gap:.5rem;color:rgba(255,255,255,.58);font-family:system-ui,sans-serif;font-size:.88rem;transition:color .2s;margin-bottom:.5rem}
+.foot-contact a:hover{color:var(--rust2)}
+.foot-col h4{font-family:system-ui,sans-serif;color:#fff;font-size:.88rem;margin-bottom:1rem;font-weight:600}
+.flinks{list-style:none;display:flex;flex-direction:column;gap:.45rem}
+.flinks a{font-family:system-ui,sans-serif;font-size:.85rem;color:rgba(255,255,255,.45);transition:color .2s}
+.flinks a:hover{color:#fff}
+.foot-bottom{
+  border-top:1px solid rgba(255,255,255,.07);padding-top:1.5rem;
+  display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;
+}
+.foot-bottom p{font-family:system-ui,sans-serif;font-size:.78rem;color:rgba(255,255,255,.28)}
+.foot-tagline{font-family:Georgia,serif;font-style:italic;font-size:.88rem;color:rgba(255,255,255,.35)}
+
+/* TOAST */
+.toast{
+  position:fixed;bottom:1.5rem;left:50%;
+  transform:translateX(-50%) translateY(100px);
+  background:var(--dark);color:#fff;
+  padding:.75rem 1.5rem;border-radius:999px;
+  font-family:system-ui,sans-serif;font-size:.88rem;font-weight:500;
+  box-shadow:0 8px 32px rgba(0,0,0,.3);transition:transform .35s ease;
+  z-index:999;white-space:nowrap;
+}
+.toast.show{transform:translateX(-50%) translateY(0)}
+
+/* ======================== RESPONSIVE ======================== */
+@media(max-width:900px){
+  .nav-links,.nav-tel{display:none}
+  .hamburger{display:flex}
+  .about-grid,.join-grid,.contact-grid{grid-template-columns:1fr;gap:2.5rem}
+  .mcards,.acards{grid-template-columns:1fr}
+  .foot-inner{grid-template-columns:1fr;gap:2rem}
+  .frow{grid-template-columns:1fr}
+  .bcard{position:static}
+  .qnav{flex-direction:column-reverse}
+  .qnav .btn{width:100%}
+  .foot-bottom{justify-content:center;text-align:center}
+}
+@media(max-width:600px){
+  .section{padding:3.5rem 0}
+  .hero-content{padding:5.5rem 0 3.5rem}
+  .hero-actions{flex-direction:column}
+  .hero-actions .btn{width:100%}
+  .hero-stats{gap:1.5rem}
+  .mcard{padding:1.5rem}
+  .acard{padding:1.75rem}
+  .cform{padding:1.75rem}
+  .qcard{padding:1.75rem}
+  .res-ctas{flex-direction:column;align-items:stretch}
+  .res-ctas .btn{justify-content:center}
+}
+  </style>
+</head>
+<body>
+
+<!-- ====== NAV ====== -->
+<nav id="nav">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo">CAP<span>.</span>Vesoul</a>
+      <ul class="nav-links">
+        <li><a href="#about">L'asso</a></li>
+        <li><a href="#missions">Missions</a></li>
+        <li><a href="#actions">Actions</a></li>
+        <li><a href="#join">Rejoindre</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#quiz">Quizz</a></li>
+      </ul>
+      <a href="tel:0783891632" class="btn btn-primary nav-tel" style="min-height:40px;padding:.5rem 1.25rem;font-size:.85rem">📞 07 83 89 16 32</a>
+      <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<nav class="mobile-menu" id="mobileMenu">
+  <a href="#about">L'association</a>
+  <a href="#missions">Nos missions</a>
+  <a href="#actions">Actions concrètes</a>
+  <a href="#join">Rejoindre</a>
+  <a href="#contact">Contact</a>
+  <a href="#quiz">Quizz</a>
+  <a href="tel:0783891632" class="btn btn-primary">📞 Appeler</a>
+  <a href="mailto:Capvesoul70@gmail.com" class="btn btn-dark">✉️ Écrire</a>
+</nav>
+
+<div id="toast" class="toast"></div>
+
+<!-- ====== HERO ====== -->
+<section id="hero">
+  <div class="hero-glow1"></div>
+  <div class="hero-glow2"></div>
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-badge reveal">
+        <span class="hero-dot"></span>
+        Association locale — Vesoul, Haute-Saône (70)
+      </div>
+      <h1 class="hero-title reveal d1">
+        L'association qui fait<br><em>vivre</em> Vesoul.
+      </h1>
+      <p class="hero-sub reveal d2">
+        CAP Vesoul crée du lien entre les jeunes, les habitants et les professionnels du territoire.
+        Pas un club d'affaires. Un collectif de terrain qui agit <strong>vraiment</strong>.
+      </p>
+      <div class="hero-actions reveal d3">
+        <a href="#join" class="btn btn-primary btn-lg">Rejoindre l'association</a>
+        <a href="#contact" class="btn btn-ghost btn-lg">Nous contacter</a>
+      </div>
+      <div class="hero-stats reveal d4">
+        <div class="hstat">
+          <span class="hstat-n">80<span>+</span></span>
+          <span class="hstat-l">Membres<br>engagés</span>
+        </div>
+        <div class="hstat">
+          <span class="hstat-n">100<span>+</span></span>
+          <span class="hstat-l">Jouets distribués<br>à Noël</span>
+        </div>
+        <div class="hstat">
+          <span class="hstat-n">500<span>€</span></span>
+          <span class="hstat-l">Fournitures<br>pour la SPA</span>
+        </div>
+        <div class="hstat">
+          <span class="hstat-n">3</span>
+          <span class="hstat-l">Missions<br>complémentaires</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== QUI SOMMES-NOUS ====== -->
+<section id="about" class="section">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-text">
+        <span class="overline reveal">Qui sommes-nous ?</span>
+        <h2 class="reveal d1">Ni club d'affaires,<br>ni association politique.</h2>
+        <p class="reveal d2">
+          CAP Vesoul est quelque chose de différent. Fondée par des acteurs locaux qui en avaient assez de voir
+          la ville stagner et les énergies se disperser, l'association réunit aujourd'hui
+          <strong>plus de 80 membres</strong> autour d'une conviction simple : on fait mieux ensemble.
+        </p>
+        <p class="reveal d3">
+          Commerçants, artisans, entrepreneurs, indépendants, jeunes en formation et habitants engagés —
+          tout le monde a sa place ici. Dynamiser Vesoul, c'est l'affaire de tous, pas seulement des professionnels.
+        </p>
+        <p class="reveal d3">
+          Notre rôle ? Être le <strong>pont manquant</strong> entre ceux qui ont des compétences à transmettre
+          et ceux qui en ont besoin. Entre les entreprises qui veulent s'ouvrir et les jeunes qui cherchent leur voie.
+          Entre les bonnes volontés qui s'ignorent.
+        </p>
+        <div class="tags reveal d4">
+          <span class="tag tag-rust">🤝 Communauté</span>
+          <span class="tag tag-green">💚 Entraide</span>
+          <span class="tag tag-gold">🌟 Partage</span>
+          <span class="tag tag-gray">📍 Local d'abord</span>
+        </div>
+      </div>
+      <div class="about-card reveal d2">
+        <div class="about-card-inner">
+          <p class="about-quote">"Du concret, du lien,<br><em>des actions.</em>"</p>
+          <p>CAP Vesoul, c'est l'énergie des acteurs locaux rassemblés autour d'un territoire commun.
+          Pas des réunions pour rien — des rencontres qui aboutissent, des projets qui se concrétisent,
+          des liens qui durent.</p>
+          <div class="card-tags">
+            <span class="ctag">Créé par des locaux</span>
+            <span class="ctag">Pour tous les profils</span>
+            <span class="ctag">Actions vérifiables</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== MISSIONS ====== -->
+<section id="missions" class="section">
+  <div class="container">
+    <div class="missions-hd">
+      <span class="overline reveal">Ce que nous faisons</span>
+      <h2 class="reveal d1">Trois missions,<br>un seul territoire.</h2>
+      <p class="reveal d2">Chaque mission répond à un besoin réel observé sur le terrain à Vesoul. Elles se complètent et se renforcent.</p>
+    </div>
+    <div class="mcards">
+      <article class="mcard youth reveal d1">
+        <div class="micon">🎓</div>
+        <span class="overline">Jeunesse</span>
+        <h3>Accompagner les jeunes</h3>
+        <p>Trouver un stage ou découvrir un métier ne devrait jamais être un parcours du combattant. CAP Vesoul joue le rôle de facilitateur.</p>
+        <ul class="mlist">
+          <li>Aide à la recherche de stages (tous âges, tous niveaux)</li>
+          <li>Mise en relation directe avec des entreprises locales</li>
+          <li>Découverte des métiers en immersion</li>
+          <li>Accompagnement dans l'orientation professionnelle</li>
+        </ul>
+        <span class="mpill">🎯 Pour tous les jeunes de Vesoul</span>
+      </article>
+      <article class="mcard pro reveal d2">
+        <div class="micon">🤝</div>
+        <span class="overline" style="color:var(--green)">Développement pro</span>
+        <h3>Développer les pros locaux</h3>
+        <p>Un réseau vivant, des rencontres utiles, des montées en compétences concrètes. Pour que les professionnels grandissent ensemble.</p>
+        <ul class="mlist">
+          <li>Apéros business réguliers : networking décontracté</li>
+          <li>Formations et interventions thématiques</li>
+          <li>Partage de compétences entre membres</li>
+          <li>Collaborations et mise en réseau locale</li>
+        </ul>
+        <span class="mpill">📅 Événements réguliers</span>
+      </article>
+      <article class="mcard social reveal d3">
+        <div class="micon">❤️</div>
+        <span class="overline" style="color:var(--gold)">Solidarité</span>
+        <h3>Agir solidairement</h3>
+        <p>Une association ancrée localement se doit d'agir au-delà des intérêts professionnels. Chaque année, CAP Vesoul se mobilise.</p>
+        <ul class="mlist">
+          <li>Collecte pour la SPA : nourriture, literie, chauffage</li>
+          <li>Collecte de jouets pour les enfants défavorisés à Noël</li>
+          <li>Mobilisation des commerçants et entrepreneurs locaux</li>
+          <li>Actions concrètes, mesurables, répétées chaque année</li>
+        </ul>
+        <span class="mpill">💛 Actions vérifiables</span>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ====== ACTIONS CONCRÈTES ====== -->
+<section id="actions" class="section">
+  <div class="container">
+    <div class="actions-hd">
+      <span class="overline reveal">Ce que nous avons accompli</span>
+      <h2 class="reveal d1">Des chiffres réels,<br>des actions vérifiables.</h2>
+      <p class="reveal d2">Pas de promesses. Voici ce que CAP Vesoul a concrètement réalisé grâce à ses membres.</p>
+    </div>
+    <div class="acards">
+      <article class="acard spa reveal d1">
+        <div class="acard-inner">
+          <span class="overline">Collecte SPA Vesoul</span>
+          <div class="anum">500€</div>
+          <p class="anum-lbl">de fournitures réunies</p>
+          <h3>Nourrir et chauffer les animaux abandonnés</h3>
+          <p>En mobilisant ses membres — commerçants, entrepreneurs et habitants —
+          CAP Vesoul a collecté environ 500 euros de fournitures au profit de la SPA locale.
+          Nourriture, literie, chauffage : l'essentiel pour traverser l'hiver.
+          Une action née d'une conversation entre membres, devenue réalité en quelques semaines.</p>
+        </div>
+      </article>
+      <article class="acard noel reveal d2">
+        <div class="acard-inner">
+          <span class="overline">Collecte de Noël</span>
+          <div class="anum">100+</div>
+          <p class="anum-lbl">jouets distribués</p>
+          <h3>Des cadeaux pour les enfants qui en avaient le plus besoin</h3>
+          <p>Plus de 100 jouets neufs, offerts par des commerçants et entrepreneurs locaux membres
+          de CAP Vesoul, ont été distribués à des enfants défavorisés de la région.
+          Une solidarité concrète, de territoire à territoire.
+          Parce qu'à Vesoul, Noël doit sourire à tous les enfants.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ====== REJOINDRE ====== -->
+<section id="join" class="section">
+  <div class="container">
+    <div class="join-grid">
+      <div class="join-text">
+        <span class="overline reveal">Rejoindre CAP Vesoul</span>
+        <h2 class="reveal d1">Une place pour chacun,<br>une force pour tous.</h2>
+        <p class="lead reveal d2">CAP Vesoul n'est pas réservé aux "professionnels établis". L'association est ouverte à toute personne qui veut contribuer à la vie locale.</p>
+        <div class="profiles reveal d3">
+          <div class="profile">
+            <span class="profile-icon">🏪</span>
+            <div>
+              <div class="profile-title">Commerçant ou artisan</div>
+              <div class="profile-desc">Développez votre clientèle locale, collaborez avec d'autres pros, gagnez en visibilité sur le territoire.</div>
+            </div>
+          </div>
+          <div class="profile">
+            <span class="profile-icon">🚀</span>
+            <div>
+              <div class="profile-title">Entrepreneur ou indépendant</div>
+              <div class="profile-desc">Construisez un réseau solide, accédez à des formations, rencontrez vos futurs partenaires locaux.</div>
+            </div>
+          </div>
+          <div class="profile">
+            <span class="profile-icon">🎓</span>
+            <div>
+              <div class="profile-title">Jeune en formation</div>
+              <div class="profile-desc">Trouvez un stage, découvrez des métiers, rencontrez directement des professionnels qui recrutent.</div>
+            </div>
+          </div>
+          <div class="profile">
+            <span class="profile-icon">🏡</span>
+            <div>
+              <div class="profile-title">Habitant impliqué</div>
+              <div class="profile-desc">Participez aux actions solidaires, contribuez à la vie de votre quartier, agissez pour Vesoul.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="bcard reveal d2">
+        <h3>Pourquoi nous rejoindre ?</h3>
+        <div class="bitem">
+          <div class="bnum">01</div>
+          <div>
+            <h4>Un réseau humain et local</h4>
+            <p>80+ membres actifs, des rencontres régulières, des connexions qui créent des opportunités réelles — pas des cartes de visite oubliées.</p>
+          </div>
+        </div>
+        <div class="bitem">
+          <div class="bnum">02</div>
+          <div>
+            <h4>Des événements qui ont du sens</h4>
+            <p>Apéros business, formations, ateliers : chaque rendez-vous est pensé pour que vous en repartiez avec quelque chose de concret.</p>
+          </div>
+        </div>
+        <div class="bitem">
+          <div class="bnum">03</div>
+          <div>
+            <h4>Agir pour son territoire</h4>
+            <p>Être membre, c'est contribuer à quelque chose de plus grand : une ville qui se prend en main, ensemble.</p>
+          </div>
+        </div>
+        <div class="bctas">
+          <a href="mailto:Capvesoul70@gmail.com?subject=Demande%20d%27adh%C3%A9sion%20%E2%80%94%20CAP%20Vesoul&body=Bonjour%2C%0A%0AJe%20souhaite%20rejoindre%20l%27association%20CAP%20Vesoul.%0A%0AVoici%20ma%20situation%20%3A%20%5Bd%C3%A9crivez%20votre%20profil%5D%0A%0ACordialement%2C" class="btn btn-primary">
+            ✉️ Demander à adhérer
+          </a>
+          <a href="tel:0783891632" class="btn btn-dark">📞 Appeler directement</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== CONTACT ====== -->
+<section id="contact" class="section">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-info">
+        <span class="overline reveal">Nous contacter</span>
+        <h2 class="reveal d1">On est<br>joignables.</h2>
+        <p class="lead reveal d2">Une question, une envie de s'impliquer, ou besoin d'en savoir plus ? On répond rapidement — parce qu'une association de terrain, ça répond présent.</p>
+        <div class="cmethods reveal d3">
+          <a href="tel:0783891632" class="cmethod phone">
+            <div class="cmethod-icon">📞</div>
+            <div>
+              <div class="cmethod-lbl">Téléphone</div>
+              <div class="cmethod-val">07 83 89 16 32</div>
+            </div>
+            <span class="cmethod-arr">→</span>
+          </a>
+          <a href="mailto:Capvesoul70@gmail.com" class="cmethod email">
+            <div class="cmethod-icon">✉️</div>
+            <div>
+              <div class="cmethod-lbl">Email</div>
+              <div class="cmethod-val">Capvesoul70@gmail.com</div>
+            </div>
+            <span class="cmethod-arr">→</span>
+          </a>
+        </div>
+        <p class="reveal d4" style="font-size:.85rem">📍 Association basée à Vesoul, Haute-Saône (70)<br>On intervient sur tout le territoire local.</p>
+      </div>
+      <div class="cform reveal d2">
+        <h3>Envoyez-nous un message</h3>
+        <p class="cform-sub">Ce formulaire ouvrira votre application mail avec votre message pré-rempli. Aucune donnée n'est collectée.</p>
+        <form id="contactForm" novalidate>
+          <div class="frow">
+            <div class="fg">
+              <label for="cName">Votre prénom</label>
+              <input type="text" id="cName" placeholder="Ex : Marie" autocomplete="given-name" />
+            </div>
+            <div class="fg">
+              <label for="cEmail">Votre email</label>
+              <input type="email" id="cEmail" placeholder="marie@exemple.fr" autocomplete="email" />
+            </div>
+          </div>
+          <div class="fg">
+            <label for="cSubject">Objet</label>
+            <input type="text" id="cSubject" placeholder="Ex : Question sur les stages, adhésion…" />
+          </div>
+          <div class="fg">
+            <label for="cMessage">Votre message</label>
+            <textarea id="cMessage" rows="5" placeholder="Décrivez votre démarche, votre question ou votre projet…"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Envoyer via ma messagerie ✉️</button>
+          <p class="fnote">Aucun backend, aucune donnée stockée. Le formulaire ouvre votre client mail.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== QUIZ ====== -->
+<section id="quiz" class="section">
+  <div class="container">
+    <div class="quiz-wrap">
+      <div class="quiz-hd">
+        <span class="overline reveal">Pour s'amuser (et se découvrir)</span>
+        <h2 class="reveal d1">Quel acteur local es-tu ?</h2>
+        <p class="reveal d2">7 questions, 2 minutes, aucune donnée collectée. Découvrez votre profil dans l'esprit CAP Vesoul !</p>
+      </div>
+      <div class="qpbar reveal d3" id="qpbar">
+        <div class="qpfill" id="qpfill" style="width:0%"></div>
+      </div>
+      <div class="qcard reveal d4">
+        <div id="qquestions">
+          <span class="qstep" id="qstep">Question 1 / 7</span>
+          <p class="qquestion" id="qtext"></p>
+          <div class="qopts" id="qopts"></div>
+          <div class="qnav">
+            <button class="qprev" id="qprev" style="display:none">← Précédent</button>
+            <button class="btn btn-primary" id="qnext" disabled>Suivant →</button>
+          </div>
+        </div>
+        <div class="qresult" id="qresult">
+          <span class="res-icon" id="resIcon"></span>
+          <div class="res-sub" id="resSub"></div>
+          <h3 class="res-name" id="resName"></h3>
+          <p class="res-desc" id="resDesc"></p>
+          <div class="res-action" id="resAction">
+            <div class="res-action-lbl">👉 Ce que CAP Vesoul vous conseille</div>
+            <p id="resActionText"></p>
+          </div>
+          <div class="res-ctas">
+            <button class="btn btn-primary" id="copyBtn">📋 Copier mon résultat</button>
+            <a href="mailto:Capvesoul70@gmail.com?subject=Adh%C3%A9sion%20CAP%20Vesoul&body=Bonjour%2C%20je%20souhaite%20rejoindre%20CAP%20Vesoul%20!" class="btn btn-green">Rejoindre CAP Vesoul</button>
+            <button class="btn" style="background:var(--cream2);color:var(--slate);border:2px solid var(--sand)" id="qrestart">🔄 Recommencer</button>
+          </div>
+          <p class="res-note" id="copyNote"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== FOOTER ====== -->
+<footer>
+  <div class="container">
+    <div class="foot-inner">
+      <div class="foot-brand">
+        <a href="#hero" class="foot-logo">CAP<span>.</span>Vesoul</a>
+        <p>L'association des acteurs locaux de Vesoul.<br>Commerçants, entrepreneurs, jeunes et habitants.<br><em>Agir localement, ensemble.</em></p>
+        <div class="foot-contact">
+          <a href="tel:0783891632">📞 07 83 89 16 32</a>
+          <a href="mailto:Capvesoul70@gmail.com">✉️ Capvesoul70@gmail.com</a>
+        </div>
+      </div>
+      <div class="foot-col">
+        <h4>Navigation</h4>
+        <ul class="flinks">
+          <li><a href="#about">L'association</a></li>
+          <li><a href="#missions">Nos missions</a></li>
+          <li><a href="#actions">Actions concrètes</a></li>
+          <li><a href="#join">Rejoindre</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#quiz">Quizz</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Nous rejoindre</h4>
+        <ul class="flinks">
+          <li><a href="mailto:Capvesoul70@gmail.com?subject=Demande%20d%27adh%C3%A9sion">Demande d'adhésion</a></li>
+          <li><a href="mailto:Capvesoul70@gmail.com?subject=Proposition%20de%20stage">Proposer un stage</a></li>
+          <li><a href="mailto:Capvesoul70@gmail.com?subject=Partenariat">Devenir partenaire</a></li>
+          <li><a href="mailto:Capvesoul70@gmail.com?subject=Action%20solidaire">Action solidaire</a></li>
+        </ul>
+        <a href="tel:0783891632" class="btn btn-primary" style="font-size:.85rem;min-height:44px;padding:.6rem 1.25rem;margin-top:1.5rem">📞 Appeler</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <p>© 2024 CAP Vesoul — Association loi 1901 — Vesoul, Haute-Saône (70)</p>
+      <span class="foot-tagline">Du concret, du lien, des actions.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ── Scroll reveal ──
+const revealEls = document.querySelectorAll('.reveal');
+const revealObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); revealObs.unobserve(e.target); }});
+}, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
+revealEls.forEach(el => revealObs.observe(el));
+
+// ── Nav ──
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 20), {passive:true});
+
+// ── Mobile menu ──
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobileMenu');
+hamburger.addEventListener('click', () => {
+  const open = mobileMenu.classList.toggle('open');
+  hamburger.setAttribute('aria-expanded', open);
+});
+mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.remove('open')));
+
+// ── Contact form ──
+document.getElementById('contactForm').addEventListener('submit', e => {
+  e.preventDefault();
+  const name    = document.getElementById('cName').value.trim();
+  const email   = document.getElementById('cEmail').value.trim();
+  const subject = document.getElementById('cSubject').value.trim() || 'Contact via le site CAP Vesoul';
+  const message = document.getElementById('cMessage').value.trim();
+  const body = [name?`De : ${name}`:'', email?`Email : ${email}`:'', '', message||'(aucun message)', '', '---', 'Envoyé depuis le site CAP Vesoul'].join('\n');
+  window.location.href = `mailto:Capvesoul70@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+});
+
+// ── Toast ──
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 2800);
+}
+
+// ── QUIZ ──
+const QUESTIONS = [
+  { q: "Un samedi matin à Vesoul, on vous trouve plutôt…",
+    opts: [
+      { t:"En train de papoter avec voisins et commerçants du quartier", s:{C:2,B:0,S:1,T:0} },
+      { t:"À plancher sur un projet ou une idée à lancer", s:{C:0,B:3,S:0,T:0} },
+      { t:"À aider quelqu'un — déménagement, collecte, peu importe", s:{C:0,B:0,S:3,T:0} },
+      { t:"À donner un coup de main à un jeune qui galère", s:{C:0,B:0,S:0,T:3} }
+    ]
+  },
+  { q: "Si vous organisiez un événement pour Vesoul, ce serait…",
+    opts: [
+      { t:"Un apéro géant pour que tout le monde se rencontre", s:{C:3,B:0,S:1,T:0} },
+      { t:"Un hackathon pour résoudre un vrai problème local", s:{C:0,B:3,S:0,T:1} },
+      { t:"Une collecte solidaire avec remise directe aux bénéficiaires", s:{C:0,B:0,S:3,T:0} },
+      { t:"Un forum de l'orientation pour les lycéens et étudiants", s:{C:0,B:0,S:0,T:3} }
+    ]
+  },
+  { q: "Quelqu'un vous dit qu'il cherche du travail à Vesoul. Votre réflexe ?",
+    opts: [
+      { t:"Je vais lui trouver trois contacts dans les 24h", s:{C:3,B:0,S:0,T:0} },
+      { t:"Je lui propose de créer quelque chose ensemble", s:{C:0,B:3,S:0,T:0} },
+      { t:"Je lui parle des associations et structures d'aide locales", s:{C:0,B:0,S:2,T:1} },
+      { t:"Je lui explique son secteur pour qu'il trouve sa voie", s:{C:0,B:0,S:0,T:3} }
+    ]
+  },
+  { q: "Ce qui vous motive le plus dans l'engagement local…",
+    opts: [
+      { t:"Créer des liens qui n'existaient pas encore", s:{C:3,B:0,S:0,T:1} },
+      { t:"Voir un projet concret aboutir après des mois d'effort", s:{C:0,B:3,S:0,T:0} },
+      { t:"Savoir qu'une personne va mieux grâce à votre action", s:{C:0,B:0,S:3,T:0} },
+      { t:"Voir un jeune trouver sa voie et s'épanouir", s:{C:0,B:0,S:1,T:3} }
+    ]
+  },
+  { q: "Votre superpouvoir secret, c'est…",
+    opts: [
+      { t:"Retenir les noms, visages et besoins de chacun", s:{C:3,B:0,S:0,T:0} },
+      { t:"Transformer une idée floue en plan d'action clair", s:{C:0,B:3,S:0,T:0} },
+      { t:"Détecter instantanément qui a besoin d'aide autour de vous", s:{C:0,B:0,S:3,T:0} },
+      { t:"Expliquer des choses complexes de façon simple et inspirante", s:{C:0,B:0,S:0,T:3} }
+    ]
+  },
+  { q: "Une soirée CAP Vesoul réussie pour vous, c'est…",
+    opts: [
+      { t:"Cinq nouvelles connexions qui vont aboutir à des projets", s:{C:3,B:1,S:0,T:0} },
+      { t:"Une idée de projet local qui émerge du groupe", s:{C:0,B:3,S:0,T:0} },
+      { t:"Une collecte organisée ou une action solidaire lancée", s:{C:0,B:0,S:3,T:0} },
+      { t:"Un jeune qui repart avec un stage ou un contact clé", s:{C:0,B:0,S:0,T:3} }
+    ]
+  },
+  { q: "Dans 5 ans, Vesoul idéal c'est une ville où…",
+    opts: [
+      { t:"Tout le monde se connaît et les collaborations fleurissent", s:{C:3,B:0,S:0,T:0} },
+      { t:"Des dizaines de projets locaux ont vu le jour", s:{C:0,B:3,S:0,T:0} },
+      { t:"Personne n'est laissé de côté, les solidarités fonctionnent", s:{C:0,B:0,S:3,T:0} },
+      { t:"Les jeunes restent car ils y trouvent leur avenir pro", s:{C:0,B:0,S:0,T:3} }
+    ]
+  }
+];
+
+const PROFILES = {
+  C: {
+    icon:'🔗', sub:'Le nœud du réseau local', name:'Le Connecteur',
+    desc:"Vous êtes la personne que tout le monde appelle quand ils cherchent quelqu'un. Votre carnet d'adresses est une légende vivante, et vous savez instinctivement qui doit rencontrer qui. À CAP Vesoul, les gens comme vous font tourner le monde.",
+    action:"Venez à notre prochain apéro business — vous allez adorer, et tout le monde va vous adorer. Votre présence change la dynamique d'une salle entière."
+  },
+  B: {
+    icon:'🏗️', sub:"L'architecte des projets concrets", name:'Le Bâtisseur',
+    desc:"Les idées, c'est bien. Les réaliser, c'est mieux — et c'est votre spécialité. Vous transformez les intentions floues en plans d'action, et les plans d'action en réalités tangibles. CAP Vesoul a besoin de bâtisseurs comme vous.",
+    action:"Partagez vos compétences lors d'une de nos formations ou ateliers — ou proposez-nous un projet. On est prêts à construire avec vous."
+  },
+  S: {
+    icon:'❤️', sub:'La conscience du collectif', name:'Le Solidaire',
+    desc:"Vous avez un sixième sens pour détecter qui a besoin d'aide, et une énergie inépuisable pour y répondre. La solidarité n'est pas pour vous une valeur abstraite, c'est un réflexe. Sans des gens comme vous, les associations ne seraient que des clubs.",
+    action:"Rejoignez notre prochain appel aux dons ou participez à l'organisation d'une collecte. Votre énergie là-dedans, c'est de l'or pour les familles qui en bénéficient."
+  },
+  T: {
+    icon:'🌱', sub:'Le passeur de savoirs', name:"L'Éclaireur",
+    desc:"Vous croyez profondément que transmettre, c'est l'acte le plus puissant qui soit. Aider un jeune à trouver sa voie, expliquer un métier, ouvrir une porte : voilà ce qui vous anime. Dans un territoire comme Vesoul, les éclaireurs comme vous changent des trajectoires de vie.",
+    action:"Proposez un stage dans votre structure ou venez échanger avec des jeunes lors de nos rencontres orientation. Une heure de votre temps peut changer leur avenir."
+  }
+};
+
+let cur = 0, answers = new Array(7).fill(null);
+const qstep = document.getElementById('qstep');
+const qtext = document.getElementById('qtext');
+const qopts = document.getElementById('qopts');
+const qnext = document.getElementById('qnext');
+const qprev = document.getElementById('qprev');
+const qpfill = document.getElementById('qpfill');
+const qqDiv = document.getElementById('qquestions');
+const qrDiv = document.getElementById('qresult');
+const LETTERS = ['A','B','C','D'];
+
+function renderQ(i) {
+  const q = QUESTIONS[i];
+  qstep.textContent = `Question ${i+1} / ${QUESTIONS.length}`;
+  qtext.textContent = q.q;
+  qopts.innerHTML = '';
+  q.opts.forEach((opt, oi) => {
+    const btn = document.createElement('button');
+    btn.className = 'qopt' + (answers[i]===oi?' sel':'');
+    btn.innerHTML = `<span class="qletter">${LETTERS[oi]}</span>${opt.t}`;
+    btn.onclick = () => pickAnswer(oi);
+    qopts.appendChild(btn);
+  });
+  qnext.disabled = answers[i]===null;
+  qnext.textContent = i===QUESTIONS.length-1 ? 'Voir mon résultat 🎉' : 'Suivant →';
+  qprev.style.display = i>0 ? 'block' : 'none';
+  qpfill.style.width = Math.round((i/QUESTIONS.length)*100)+'%';
+}
+
+function pickAnswer(oi) {
+  answers[cur] = oi;
+  document.querySelectorAll('.qopt').forEach((b,i) => {
+    b.classList.toggle('sel', i===oi);
+    b.querySelector('.qletter').style.background = i===oi ? 'var(--rust)' : '';
+    b.querySelector('.qletter').style.color = i===oi ? '#fff' : '';
+  });
+  qnext.disabled = false;
+}
+
+qnext.addEventListener('click', () => {
+  if(answers[cur]===null) return;
+  if(cur < QUESTIONS.length-1){ cur++; renderQ(cur); }
+  else showResult();
+});
+qprev.addEventListener('click', () => { if(cur>0){ cur--; renderQ(cur); }});
+
+function computeProfile() {
+  const s = {C:0,B:0,S:0,T:0};
+  answers.forEach((a,qi) => { if(a===null) return; Object.keys(QUESTIONS[qi].opts[a].s).forEach(k => s[k]+=QUESTIONS[qi].opts[a].s[k]); });
+  return Object.keys(s).reduce((a,b) => s[a]>=s[b]?a:b);
+}
+
+function showResult() {
+  const p = PROFILES[computeProfile()];
+  qqDiv.style.display = 'none';
+  qrDiv.classList.add('show');
+  document.getElementById('resIcon').textContent = p.icon;
+  document.getElementById('resSub').textContent = p.sub;
+  document.getElementById('resName').textContent = p.name;
+  document.getElementById('resDesc').textContent = p.desc;
+  document.getElementById('resActionText').textContent = p.action;
+  qpfill.style.width = '100%';
+
+  document.getElementById('copyBtn').onclick = () => {
+    const txt = `🎯 Mon profil CAP Vesoul : ${p.icon} ${p.name}\n"${p.desc}"\n\n${p.action}\n\n#CAPVesoul #ActeursLocaux #Vesoul`;
+    if(navigator.clipboard) {
+      navigator.clipboard.writeText(txt).then(() => toast('✅ Résultat copié !'));
+    } else {
+      document.getElementById('copyNote').textContent = 'Copiez ce texte : ' + txt;
+    }
+  };
+}
+
+document.getElementById('qrestart').addEventListener('click', () => {
+  cur=0; answers=new Array(7).fill(null);
+  qrDiv.classList.remove('show'); qqDiv.style.display='block';
+  renderQ(0);
+});
+
+renderQ(0);
+</script>
+</body>
+</html>
